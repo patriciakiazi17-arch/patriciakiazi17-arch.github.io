@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Febbe Patricia Kiazi, Data Analyst, Master 2 Audit et Conception des Systèmes d'Information. Stage de 6 mois dès mars 2027.">
+<title>Febbe Patricia Kiazi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: nude hero band with translucent diamonds (single light look, chosen deliberately), then one reading column of cards on a soft ground. */
+:root{
+  --bg:#F7F1EC; --band:#ECDDD2; --card:#FFFCFA; --line:#E4D3C7;
+  --fg:#3A2F2A; --muted:#7A685E;
+  --accent:#8E5A47; --accent-soft:#C7A08C; --on-accent:#FFFFFF;
+  --display:'Inter Tight','Inter',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1000px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;font-weight:400}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
+.mono{font-family:var(--mono)}
+
+/* HERO BAND */
+.band{position:relative;overflow:hidden;background:linear-gradient(115deg,#F3E8E0 0%,var(--band) 60%,#E5D2C5 100%)}
+.diam{position:absolute;transform:rotate(45deg);pointer-events:none}
+.d1{width:460px;height:460px;left:-210px;top:-260px;background:rgba(199,160,140,.32)}
+.d2{width:320px;height:320px;left:60px;top:-110px;background:rgba(214,186,168,.34)}
+.d3{width:560px;height:560px;left:-340px;top:200px;background:rgba(186,146,126,.20)}
+.d4{width:200px;height:200px;left:330px;top:300px;background:rgba(214,186,168,.30)}
+.d5{width:260px;height:260px;right:-120px;top:-150px;background:rgba(199,160,140,.18)}
+.hero{position:relative;padding-block:72px 64px;display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;gap:18px}
+.hero h1{font-weight:300;font-size:clamp(34px,6vw,60px);letter-spacing:.24em;margin-right:-.24em;text-transform:uppercase;line-height:1.15}
+.hero .rule{width:80px;height:2px;background:var(--accent-soft)}
+.hero .degree{font-size:clamp(13px,1.6vw,15px);font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--fg);max-width:90ch}
+.hero .school{font-size:13.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:-8px}
+.hero .pitch{font-size:clamp(17px,2.1vw,20px);max-width:44ch;margin:8px 0 0}
+.avail{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--on-accent);
+  font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;padding:10px 20px;border-radius:2px}
+.avail i{width:7px;height:7px;border-radius:50%;background:var(--on-accent);display:block}
+.contact-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);
+  padding:10px 16px;border-radius:2px;font:500 14.5px var(--body);text-decoration:none;cursor:pointer;max-width:100%;flex-wrap:wrap;justify-content:center}
+.btn:hover{border-color:var(--accent)}
+.btn .mono{font-size:13.5px;overflow-wrap:anywhere}
+.copied{font-size:13px;color:var(--accent);min-height:1.2em}
+
+main.inner{padding-block:64px 72px;display:flex;flex-direction:column;gap:84px}
+section>header{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+section h2{font-size:clamp(26px,3.4vw,34px)}
+section>header p{color:var(--muted);margin:0;max-width:64ch}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start}
+.about p{margin:0 0 14px;max-width:62ch}
+.about strong{font-weight:600;color:var(--accent)}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.facts div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;font-size:14.5px}
+.facts dt{color:var(--muted);font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding-top:2px}
+.facts dd{margin:0}
+dl{margin:0}
+
+/* FIGURES */
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fig{padding:24px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.fig+.fig{border-left:1px solid var(--line)}
+.fig b{font-family:var(--display);font-weight:300;font-size:42px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.fig span{color:var(--muted);font-size:14px;line-height:1.45}
+
+/* WHY ME */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.why article{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.why .k{width:34px;height:34px;transform:rotate(45deg);background:var(--band);border:1px solid var(--accent-soft);display:grid;place-items:center;margin:4px 0 6px 4px}
+.why .k span{transform:rotate(-45deg);font-family:var(--display);font-size:14px;color:var(--accent)}
+.why h3{font-size:18.5px;font-weight:500}
+.why p{margin:0;color:var(--muted);font-size:15px}
+
+/* OFFER */
+.offer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+.offer div{padding:22px 24px;display:flex;gap:14px;align-items:flex-start;min-width:0;border-bottom:1px solid var(--line)}
+.offer div:nth-child(odd){border-right:1px solid var(--line)}
+.offer div:nth-last-child(-n+2){border-bottom:0}
+.offer b{font-family:var(--mono);font-weight:500;font-size:12.5px;color:var(--accent);padding-top:3px;white-space:nowrap}
+.offer p{margin:0}
+.offer p span{display:block;color:var(--muted);font-size:14.5px}
+
+/* METHOD */
+.method{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.mstep{position:relative;padding-right:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.mstep .dot{width:12px;height:12px;transform:rotate(45deg);background:var(--accent);position:relative;z-index:1}
+.mstep:not(:last-child)::before{content:"";position:absolute;top:5px;left:14px;right:0;height:1px;background:var(--accent-soft)}
+.mstep small{font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:8px}
+.mstep b{font-family:var(--display);font-weight:500;font-size:16px}
+.mstep span{font-size:14px;color:var(--muted);line-height:1.45}
+
+/* PROJECTS */
+.projects{display:flex;flex-direction:column;gap:20px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:30px}
+.proj .meta{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.04em}
+.proj h3{font-weight:500;font-size:22px;margin:8px 0 12px}
+.proj p{margin:0 0 12px;max-width:60ch}
+.proj ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.proj li::marker{color:var(--accent-soft)}
+.role{font-size:14.5px;background:var(--bg);border-left:2px solid var(--accent);padding:10px 14px;margin:0 0 14px;max-width:60ch}
+.side{display:flex;flex-direction:column;gap:16px;min-width:0}
+.side h4{margin:0 0 8px;font:600 11px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--mono);font-size:12px;padding:4px 9px;border:1px solid var(--line);border-radius:2px;background:var(--card)}
+.pipe{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px dashed var(--line);padding-top:20px}
+.step{position:relative;padding-right:14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.step .dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--card);position:relative;z-index:1}
+.step:not(:last-child)::before{content:"";position:absolute;top:4px;left:10px;right:0;height:1px;background:var(--accent-soft)}
+.step b{font-family:var(--display);font-weight:500;font-size:14.5px;margin-top:6px}
+.step span{font-size:13px;color:var(--muted);line-height:1.45}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 20px}
+.skill{border-top:1px solid var(--accent-soft);padding-top:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.skill h3{font-weight:500;font-size:17px}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;border-left:1px solid var(--line);margin-left:6px}
+.tl{display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;padding:0 0 24px 26px;position:relative}
+.tl::before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;transform:rotate(45deg);background:var(--accent)}
+.tl .when{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:2px}
+.tl h3{font-weight:500;font-size:17px}
+.tl p{margin:4px 0 0;color:var(--muted);font-size:15px}
+
+/* CONTACT */
+.contact{position:relative;overflow:hidden;background:var(--band);border-radius:4px;padding:44px 40px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center}
+.contact .diam{opacity:.8}
+.contact > div:not(.diam){position:relative}
+.contact h2{font-size:clamp(23px,3vw,30px);margin-top:10px}
+.contact p{color:var(--muted);margin:10px 0 0;max-width:52ch}
+footer{color:var(--muted);font-size:13px;text-align:center;padding-bottom:40px}
+
+@media (max-width:820px){
+  .about{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr}
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .method{grid-template-columns:1fr;gap:16px}
+  .mstep{padding-left:26px;padding-right:0}.mstep .dot{position:absolute;left:0;top:4px}
+  .mstep small{margin-top:0}
+  .mstep:not(:last-child)::before{left:5px;top:18px;bottom:-16px;right:auto;width:1px;height:auto}
+}
+@media (max-width:640px){
+  .hero{padding-block:52px 46px}
+  .hero h1{letter-spacing:.14em;margin-right:-.14em}
+  main.inner{gap:60px;padding-block:44px 56px}
+  .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fig:nth-child(3){border-left:0}.fig:nth-child(n+3){border-top:1px solid var(--line)}
+  .offer{grid-template-columns:1fr}
+  .offer div:nth-child(odd){border-right:0}
+  .offer div:nth-last-child(2){border-bottom:1px solid var(--line)}
+  .proj{grid-template-columns:1fr;padding:22px;gap:20px}
+  .pipe{grid-template-columns:1fr;gap:14px}
+  .step{padding-left:24px;padding-right:0}.step .dot{position:absolute;left:0;top:4px}.step b{margin-top:0}
+  .step:not(:last-child)::before{left:5px;top:16px;bottom:-14px;right:auto;width:1px;height:auto}
+  .skills{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:2px}
+  .facts div{grid-template-columns:1fr;gap:2px}
+  .contact{grid-template-columns:1fr;padding:28px 22px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero > *{animation:rise .7s ease both}
+  .hero > *:nth-child(2){animation-delay:.05s}.hero > *:nth-child(3){animation-delay:.1s}
+  .hero > *:nth-child(n+4){animation-delay:.15s}
+  @keyframes rise{from{transform:translateY(8px)}to{transform:none}}
+}
+</style>
+</head>
+<body>
+
+<div class="band pad">
+  <div class="diam d1"></div><div class="diam d2"></div><div class="diam d3"></div><div class="diam d4"></div><div class="diam d5"></div>
+  <header class="hero inner">
+    <div class="eyebrow">Data Analyst · Business Intelligence</div>
+    <h1>Febbe Patricia Kiazi</h1>
+    <div class="rule"></div>
+    <div class="degree">Master 2 Audit et Conception des Systèmes d'Information</div>
+    <div class="school">IDMC – Université de Lorraine</div>
+    <p class="pitch">Je transforme des données brutes en informations fiables, et des informations fiables en décisions.</p>
+    <div class="avail"><i></i>Stage de 6 mois · dès mars 2027</div>
+    <div class="contact-row">
+      <button class="btn" type="button" id="copy-top" data-mail="patriciakiazi17@gmail.com"><span class="mono">patriciakiazi17@gmail.com</span> · Copier</button>
+      <a class="btn" href="https://www.linkedin.com/in/febbe-patricia-kiazi-466418328/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="copied" id="copied-top" aria-live="polite"></div>
+  </header>
+</div>
+
+<main class="inner pad">
+
+  <section id="profil">
+    <header>
+      <div class="eyebrow">Profil</div>
+      <h2>Qui je suis</h2>
+    </header>
+    <div class="about">
+      <div>
+        <p>Je suis en dernière année de Master <strong>Audit et Conception des Systèmes d'Information</strong> à l'IDMC. Ma formation m'apprend à faire le lien entre deux mondes : le <strong>besoin métier</strong> d'une entreprise et <strong>la manière dont ses données sont construites</strong>.</p>
+        <p>Avant l'informatique, j'ai fait une prépa médecine. J'en garde une vraie méthode de travail : de la rigueur, de l'endurance et le réflexe de tout vérifier avant de conclure. C'est exactement ce qu'un tableau de bord demande : un chiffre faux fait prendre une mauvaise décision.</p>
+        <p>Ce que j'aime, c'est le moment où un fichier désordonné devient un indicateur clair qu'un manager peut utiliser le lendemain matin.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Je cherche</dt><dd>Un stage de fin d'études de 6 mois en Data Analyst ou BI</dd></div>
+        <div><dt>Début</dt><dd>Mars 2027</dd></div>
+        <div><dt>Basée à</dt><dd>Nancy · sur site ou hybride</dd></div>
+        <div><dt>Langues</dt><dd>Français (maternelle), anglais B1, chinois A2</dd></div>
+        <div><dt>Qualités</dt><dd>Rigueur, sens de l'éthique, autonomie, travail en équipe</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="figures" aria-label="Chiffres clés">
+    <div class="fig"><b>≈ 2 M</b><span>lignes d'accidents dans le projet BI Sécurité routière</span></div>
+    <div class="fig"><b>24</b><span>fichiers officiels 2019-2024 contrôlés un par un</span></div>
+    <div class="fig"><b>52</b><span>règles de qualité écrites et utilisées par le pipeline Python</span></div>
+    <div class="fig"><b>7</b><span>sources hétérogènes réunies dans un entrepôt MySQL</span></div>
+  </div>
+
+  <section id="pourquoi">
+    <header>
+      <div class="eyebrow">Pourquoi moi</div>
+      <h2>Ce que j'apporte à votre équipe</h2>
+    </header>
+    <div class="why">
+      <article><div class="k"><span>1</span></div><h3>Des chiffres auxquels on peut se fier</h3><p>Je contrôle la qualité avant d'analyser. Sur un projet de 50 personnes, j'ai écrit le référentiel de règles de nettoyage utilisé par le pipeline commun.</p></article>
+      <article><div class="k"><span>2</span></div><h3>Le regard métier et le regard technique</h3><p>Ma formation en audit et conception des SI m'apprend à comprendre le besoin avant d'écrire la première requête SQL.</p></article>
+      <article><div class="k"><span>3</span></div><h3>Toute la chaîne de la donnée</h3><p>Extraction, nettoyage, entrepôt, tableau de bord : je sais suivre une donnée de sa source jusqu'à la décision.</p></article>
+      <article><div class="k"><span>4</span></div><h3>À l'aise en équipe</h3><p>Branches, pull requests, relectures : j'ai l'habitude de travailler sur le même code que d'autres et d'expliquer mes choix.</p></article>
+      <article><div class="k"><span>5</span></div><h3>Une méthode de travail solide</h3><p>La prépa médecine m'a appris à apprendre vite, à gérer une grosse charge de travail et à rester précise sous pression.</p></article>
+      <article><div class="k"><span>6</span></div><h3>Une vraie double culture web et data</h3><p>Mon stage chez Studio-Bestio m'a montré l'autre côté : comment les données servent un site et ses utilisateurs.</p></article>
+    </div>
+  </section>
+
+  <section id="missions">
+    <header>
+      <div class="eyebrow">En 6 mois</div>
+      <h2>Ce que je peux faire pour vous</h2>
+      <p>Des missions concrètes que je peux prendre en charge dès mon arrivée.</p>
+    </header>
+    <div class="offer">
+      <div><b>BI</b><p>Construire et faire vivre vos tableaux de bord<span>Power BI, Power Query, Looker Studio, définition des KPI</span></p></div>
+      <div><b>SQL</b><p>Interroger vos bases et préparer les jeux de données<span>MySQL, PostgreSQL, requêtes et vues pour l'analyse</span></p></div>
+      <div><b>QUALITÉ</b><p>Fiabiliser vos données<span>Contrôles, règles de nettoyage, valeurs manquantes, doublons</span></p></div>
+      <div><b>DOC</b><p>Documenter ce qui existe<span>Dictionnaire de données, règles de gestion, limites connues</span></p></div>
+      <div><b>PYTHON</b><p>Automatiser les tâches répétitives<span>Scripts de nettoyage et de préparation des fichiers</span></p></div>
+      <div><b>MODÈLE</b><p>Structurer un entrepôt de données<span>Modèle relationnel et schéma en étoile</span></p></div>
+    </div>
+  </section>
+
+  <section id="methode">
+    <header>
+      <div class="eyebrow">Ma méthode</div>
+      <h2>Comment je travaille sur un sujet data</h2>
+    </header>
+    <div class="method">
+      <div class="mstep"><div class="dot"></div><small>Étape 1</small><b>Comprendre</b><span>Quelle décision ce chiffre doit-il aider à prendre&nbsp;?</span></div>
+      <div class="mstep"><div class="dot"></div><small>Étape 2</small><b>Vérifier</b><span>D'où viennent les données, et que valent-elles vraiment&nbsp;?</span></div>
+      <div class="mstep"><div class="dot"></div><small>Étape 3</small><b>Structurer</b><span>Nettoyer, modéliser, charger dans un entrepôt</span></div>
+      <div class="mstep"><div class="dot"></div><small>Étape 4</small><b>Montrer</b><span>Un tableau de bord lisible, avec les bons indicateurs</span></div>
+      <div class="mstep"><div class="dot"></div><small>Étape 5</small><b>Documenter</b><span>Pour que l'équipe puisse s'en servir sans moi</span></div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <header>
+      <div class="eyebrow">Réalisations</div>
+      <h2>Projets et expérience</h2>
+    </header>
+    <div class="projects">
+      <article class="proj">
+        <div>
+          <div class="meta">MASTER 2 · 2026-2027</div>
+          <h3>Projet BI – Sécurité routière (fichiers BAAC)</h3>
+          <p>Chaîne BI complète sur les bulletins d'accidents corporels publiés par l'État : ETL, entrepôt de données, tableaux de bord et data mining, sur près de 2 millions de lignes, avec une promotion de 50 étudiants.</p>
+          <p class="role"><b>Mon rôle :</b> responsable des codifications. Je vérifie que chaque code des fichiers veut bien dire ce que la notice officielle annonce, et j'écris les règles que le pipeline applique.</p>
+          <ul>
+            <li>Comparaison des codifications des 24 fichiers 2019-2024 avec la notice officielle de l'ONISR.</li>
+            <li>Référentiel de 52 règles de valeurs manquantes, branché sur le nettoyage Python.</li>
+            <li>Documentation des limites des données pour les équipes d'analyse.</li>
+          </ul>
+        </div>
+        <aside class="side">
+          <div><h4>Outils</h4><div class="tags"><span class="tag">Python</span><span class="tag">CSV</span><span class="tag">Git / GitHub</span></div></div>
+          <div><h4>Compétences</h4><div class="tags"><span class="tag">Qualité des données</span><span class="tag">Dictionnaire de données</span><span class="tag">ETL</span></div></div>
+        </aside>
+        <div class="pipe" aria-label="Ma partie du pipeline">
+          <div class="step"><div class="dot"></div><b>Notice ONISR</b><span>La référence officielle des codes</span></div>
+          <div class="step"><div class="dot"></div><b>24 fichiers</b><span>4 fichiers par an, 2019-2024</span></div>
+          <div class="step"><div class="dot"></div><b>Comparaison</b><span>Codes absents, ajoutés ou qui changent de sens</span></div>
+          <div class="step"><div class="dot"></div><b>52 règles</b><span>Valeur manquante ou valeur à garder</span></div>
+          <div class="step"><div class="dot"></div><b>Nettoyage Python</b><span>Règles validées appliquées automatiquement</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div>
+          <div class="meta">MASTER 1 · 2026</div>
+          <h3>Projet BI – GlobalTech ControlTower</h3>
+          <p>Tour de contrôle logistique et financière pour un importeur : de sept sources différentes jusqu'à un tableau de bord Power BI prêt pour la direction.</p>
+          <ul>
+            <li>Intégration de 7 sources (Excel, CSV, JSON, XML, SQL) dans un entrepôt MySQL en étoile.</li>
+            <li>Nettoyage et préparation avec Power Query : formats, valeurs aberrantes, doublons.</li>
+            <li>Définition des KPI : coût d'approche, délais de livraison, taux de casse.</li>
+          </ul>
+        </div>
+        <aside class="side">
+          <div><h4>Outils</h4><div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">MySQL</span><span class="tag">Excel</span></div></div>
+          <div><h4>Compétences</h4><div class="tags"><span class="tag">Schéma en étoile</span><span class="tag">KPI</span><span class="tag">Data visualisation</span></div></div>
+        </aside>
+      </article>
+
+      <article class="proj">
+        <div>
+          <div class="meta">STAGE · NANCY · AVRIL – JUIN 2025</div>
+          <h3>Studio-Bestio – Stage Web &amp; Data</h3>
+          <ul>
+            <li>Collecte et visualisation de données SEO.</li>
+            <li>Création d'un tableau de bord analytique pour suivre la performance des sites.</li>
+            <li>Intégration d'interfaces web responsives à partir de maquettes Figma.</li>
+          </ul>
+        </div>
+        <aside class="side">
+          <div><h4>Outils</h4><div class="tags"><span class="tag">Looker Studio</span><span class="tag">Figma</span><span class="tag">WordPress</span><span class="tag">HTML / CSS</span></div></div>
+        </aside>
+      </article>
+
+      <article class="proj">
+        <div>
+          <div class="meta">MASTER 2 · 2026 · EN COURS</div>
+          <h3>Automatisation du traitement des factures</h3>
+          <p>Étude bibliographique puis mise en œuvre d'une solution qui extrait automatiquement les données des factures, pour éviter la saisie à la main.</p>
+        </div>
+        <aside class="side">
+          <div><h4>Compétences</h4><div class="tags"><span class="tag">État de l'art</span><span class="tag">Extraction de données</span><span class="tag">Automatisation</span></div></div>
+        </aside>
+      </article>
+    </div>
+  </section>
+
+  <section id="competences">
+    <header>
+      <div class="eyebrow">Compétences</div>
+      <h2>Ma boîte à outils</h2>
+    </header>
+    <div class="skills">
+      <div class="skill"><h3>Analyse et visualisation</h3><div class="tags"><span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">Python</span><span class="tag">Looker Studio</span></div></div>
+      <div class="skill"><h3>Données et bases</h3><div class="tags"><span class="tag">ETL</span><span class="tag">Qualité des données</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">Schéma en étoile</span></div></div>
+      <div class="skill"><h3>Web et collaboration</h3><div class="tags"><span class="tag">Git / GitHub</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Figma</span></div></div>
+    </div>
+  </section>
+
+  <section id="parcours">
+    <header>
+      <div class="eyebrow">Parcours</div>
+      <h2>Formation</h2>
+    </header>
+    <div class="timeline">
+      <div class="tl"><div class="when">2025 – 2027</div><div><h3>Master Audit et Conception des Systèmes d'Information</h3><p>IDMC – Université de Lorraine, Nancy · Master 2 en cours</p></div></div>
+      <div class="tl"><div class="when">2022 – 2025</div><div><h3>Licence MIASHS</h3><p>IDMC – Université de Lorraine · informatique, gestion et modélisation de données</p></div></div>
+      <div class="tl"><div class="when">2021 – 2022</div><div><h3>Prépa Médecine</h3><p>MédicalSup, Nancy</p></div></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="diam d1"></div><div class="diam d5"></div>
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h2>Vous cherchez une Data Analyst en stage à partir de mars 2027&nbsp;?</h2>
+      <p>Six mois pour fiabiliser vos données et construire vos tableaux de bord. Écrivez-moi, je réponds rapidement.</p>
+    </div>
+    <div>
+      <button class="btn" type="button" id="copy-bottom" data-mail="patriciakiazi17@gmail.com"><span class="mono">patriciakiazi17@gmail.com</span> · Copier</button>
+      <div class="copied" id="copied-bottom" aria-live="polite"></div>
+    </div>
+  </section>
+
+</main>
+<footer class="pad">Febbe Patricia Kiazi · Nancy, Grand Est</footer>
+
+<script>
+function wire(btnId, outId){
+  var b=document.getElementById(btnId), o=document.getElementById(outId);
+  b.addEventListener('click',function(){
+    var mail=b.getAttribute('data-mail');
+    function fallback(){
+      var r=document.createRange(); r.selectNodeContents(b.querySelector('.mono'));
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      o.textContent='Adresse sélectionnée, faites Ctrl+C pour la copier.';
+    }
+    try{
+      navigator.clipboard.writeText(mail).then(function(){o.textContent='Adresse copiée.';},fallback);
+    }catch(e){fallback();}
+  });
+}
+wire('copy-top','copied-top'); wire('copy-bottom','copied-bottom');
+</script>
+
+</body>
+</html>
